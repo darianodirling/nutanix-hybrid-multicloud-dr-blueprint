@@ -1,0 +1,23 @@
+# DR exercise evidence record
+
+- Exercise ID:
+- Date / time zone:
+- Business owner / change approver:
+- AOS / AHV / Prism Central versions:
+- Protection mechanism and supported compatibility reference:
+- Primary / recovery site identifiers (redacted):
+- Target RPO / RTO:
+- Last known-good checkpoint:
+- Recovered checkpoint:
+- Observed RPO:
+- Start time / business-ready time / observed RTO:
+- Recovery VM count and tier order:
+- Database integrity result:
+- Application synthetic transaction result:
+- Flow allow/deny policy test results:
+- DNS / routing / load-balancer result:
+- Monitoring and alerting result:
+- Rollback result:
+- Defects, risks and remediation owner:
+- Evidence links (redacted):
+- Final decision / sign-off:
