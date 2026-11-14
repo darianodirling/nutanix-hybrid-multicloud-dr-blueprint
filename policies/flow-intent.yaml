@@ -1,0 +1,39 @@
+# Design intent, not an importable Prism Central policy.
+schema_version: 1
+status: reference-only
+policy_name: example-three-tier-microsegmentation
+enforcement_stage: monitor-first
+categories:
+  - AppTier:Web
+  - AppTier:Application
+  - AppTier:Database
+rules:
+  - source: ApprovedIngress
+    destination: AppTier:Web
+    protocol: tcp
+    ports: [443]
+    action: allow
+  - source: AppTier:Web
+    destination: AppTier:Application
+    protocol: tcp
+    ports: [8443]
+    action: allow
+  - source: AppTier:Application
+    destination: AppTier:Database
+    protocol: tcp
+    ports: [5432]
+    action: allow
+  - source: AppTier:Web
+    destination: AppTier:Database
+    protocol: any
+    action: deny
+  - source: UserNetwork
+    destination: AppTier:Database
+    protocol: any
+    action: deny
+review_required:
+  - dns
+  - ntp
+  - identity
+  - backup
+  - monitoring
