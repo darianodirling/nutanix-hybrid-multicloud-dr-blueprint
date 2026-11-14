@@ -1,0 +1,29 @@
+schema_version: 1
+application:
+  name: example-three-tier-app
+  environment: lab
+  owner: replace-with-business-owner
+  criticality: tier-1-example
+  recovery_order:
+    - database
+    - application
+    - web
+  tiers:
+    database:
+      category: AppTier:Database
+      example_vm_names: [db-01]
+      ports_from_application: [5432]
+    application:
+      category: AppTier:Application
+      example_vm_names: [app-01, app-02]
+      ports_from_web: [8443]
+    web:
+      category: AppTier:Web
+      example_vm_names: [web-01, web-02]
+      ports_from_ingress: [443]
+  external_dependencies:
+    - dns
+    - identity
+    - certificates
+    - monitoring
+    - backup
