@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "kind": "network_security_policy",
+    "spec_version": 3
+  },
+  "spec": {
+    "name": "example-three-tier-monitor",
+    "description": "Illustrative Prism Central Flow v3-shaped sample. NOT validated or directly deployable.",
+    "resources": {
+      "app_rule": {
+        "target_group": {
+          "categories": {
+            "AppTier": "Web"
+          }
+        },
+        "inbound_allow_list": [],
+        "outbound_allow_list": []
+      }
+    }
+  },
+  "safety": {
+    "monitor_only": true,
+    "requires_api_schema_review": true,
+    "requires_category_mapping": true,
+    "never_apply_to_production_unreviewed": true
+  }
+}
