@@ -1,0 +1,17 @@
+schema_version: 1
+status: illustrative-not-validated
+workload: example-three-tier-app
+objectives:
+  rpo_minutes: 15
+  rto_minutes: 120
+protection:
+  mechanism: select-supported-option-after-version-review
+  replication_mode: nearsync-if-supported
+  source_site: primary-placeholder
+  target_site: recovery-placeholder
+validation:
+  isolated_test_required: true
+  measure_actual_replication_lag: true
+  verify_database_consistency: true
+  verify_network_segmentation: true
+  require_business_signoff: true
